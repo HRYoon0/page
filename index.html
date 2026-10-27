@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>황산초등학교 5학년 영어 교실 - Teacher E.T.</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Inter & Gaegu for cute kids style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Nunito', 'sans-serif'],
+            kids: ['Gaegu', 'cursive', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              yellow: '#FCD34D',
+              orange: '#F97316',
+              green: '#10B981',
+              blue: '#3B82F6',
+              purple: '#8B5CF6',
+              space: '#1E1B4B'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom bouncing & floating animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+    }
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    .card-shadow {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+  </style>
+</head>
+<body class="bg-amber-50 text-slate-800 font-sans min-h-screen flex flex-col selection:bg-brand-yellow">
+
+  <!-- TOP HEADER / BANNER -->
+  <header class="bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 text-white shadow-lg sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-3 sm:py-4 flex flex-wrap items-center justify-between gap-3">
+      <!-- Title & School Emblem -->
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-white text-indigo-700 rounded-2xl flex items-center justify-center text-2xl shadow-inner font-black">
+          🚀
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="bg-yellow-400 text-indigo-900 text-xs font-black px-2 py-0.5 rounded-full uppercase tracking-wider">황산초등학교</span>
+            <span class="text-xs text-purple-200 font-semibold">Grade 5 English</span>
+          </div>
+          <h1 class="text-xl sm:text-2xl font-black tracking-tight">Teacher E.T.'s Space Class 👽</h1>
+        </div>
+      </div>
+
+      <!-- Quick Nav & Sound switch -->
+      <nav class="flex items-center space-x-2 text-sm font-bold">
+        <a href="#weather-section" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-cloud-sun"></i> <span>오늘의 날씨</span>
+        </a>
+        <a href="#vocab-section" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-book-open"></i> <span>단어 & 표현</span>
+        </a>
+        <a href="#quiz-section" class="px-3 py-1.5 rounded-xl bg-yellow-400 text-indigo-950 hover:bg-yellow-300 transition flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-gamepad"></i> <span>스피드 퀴즈</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-6 sm:py-8 space-y-8">
+
+    <!-- WELCOME & TEACHER E.T. INTRO HERO -->
+    <section class="bg-white rounded-3xl p-6 sm:p-8 card-shadow border-4 border-yellow-300 relative overflow-hidden">
+      <!-- Background star decorations -->
+      <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-yellow-100 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute right-12 top-6 text-yellow-300 text-5xl opacity-40 select-none">✨</div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        <!-- E.T. Avatar & Voice -->
+        <div class="md:col-span-4 flex flex-col items-center text-center">
+          <div class="relative group">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 bg-gradient-to-tr from-emerald-400 to-teal-300 rounded-3xl p-2 shadow-xl flex items-center justify-center animate-float">
+              <!-- E.T. Cute Character representation -->
+              <div class="text-7xl">👽</div>
+            </div>
+            <span class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs font-black px-2.5 py-1 rounded-full shadow-md animate-pulse">
+              Grade 5
+            </span>
+          </div>
+          <h2 class="mt-3 text-2xl font-black text-slate-800">Teacher E.T. 🪐</h2>
+          <p class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full mt-1 border border-emerald-200">
+            "English is Fun with E.T.!"
+          </p>
+          <button onclick="speakText('Hello Hwangsan Elementary School Grade 5 friends! Welcome to our English classroom with Teacher E.T. Let\'s have fun learning English together!')" 
+                  class="mt-3 inline-flex items-center gap-2 text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold px-3 py-1.5 rounded-full transition border border-indigo-200">
+            <i class="fa-solid fa-volume-high"></i> E.T. 선생님 음성 인사 듣기
+          </button>
+        </div>
+
+        <!-- Greeting Speech Bubble -->
+        <div class="md:col-span-8 bg-amber-50/70 border-2 border-dashed border-amber-300 rounded-2xl p-5 sm:p-6 relative">
+          <div class="flex items-center gap-2 text-amber-800 font-extrabold text-sm mb-2">
+            <i class="fa-solid fa-bell text-amber-500"></i>
+            <span>황산초 5학년 친구들에게 보내는 우주 전파 편지 ✉️</span>
+          </div>
+          <p class="text-slate-700 text-base sm:text-lg leading-relaxed font-medium">
+            "안녕, 멋진 5학년 친구들! 나는 여러분의 영어 길잡이 <strong class="text-indigo-600 font-black">Teacher E.T.</strong>야! 
+            외계에서 지구 영어를 탐험하러 왔지! 오늘 날씨는 어떤지 영어로 확인해 보고, 5학년 1학기/2학기 필수 단어와 실생활 표현을 원어민 소리로 들어보자. 준비되었으면 신나게 퀴즈까지 도전해 볼까?"
+          </p>
+          <!-- Daily Goal Badges -->
+          <div class="mt-4 pt-3 border-t border-amber-200 flex flex-wrap gap-2 text-xs font-bold">
+            <span class="bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-lg flex items-center gap-1">
+              🎯 오늘의 미션 1: 날씨 표현 확인하기
+            </span>
+            <span class="bg-purple-100 text-purple-800 px-3 py-1.5 rounded-lg flex items-center gap-1">
+              🎯 오늘의 미션 2: 단어 5개 발음 듣기
+            </span>
+            <span class="bg-pink-100 text-pink-800 px-3 py-1.5 rounded-lg flex items-center gap-1">
+              🎯 오늘의 미션 3: 퀴즈 100점 받기!
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL-TIME WEATHER WIDGET SECTION (Public API: Open-Meteo) -->
+    <section id="weather-section" class="bg-white rounded-3xl p-6 sm:p-8 card-shadow border-2 border-blue-200">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-700">Open Public Weather API</span>
+            <span class="text-xs text-slate-400" id="weather-updated-time">업데이트 중...</span>
+          </div>
+          <h2 class="text-2xl font-black text-slate-800 flex items-center gap-2 mt-1">
+            <span>🌦️ How's the Weather Today?</span>
+            <span class="text-sm font-semibold text-slate-500">(오늘의 날씨 영어 교실)</span>
+          </h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <select id="city-selector" onchange="fetchWeather()" class="text-sm bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <option value="35.32,129.01" selected>📍 황산초 소재지 (경남 양산)</option>
+            <option value="37.56,126.97">📍 서울 (Seoul)</option>
+            <option value="35.17,129.07">📍 부산 (Busan)</option>
+            <option value="33.49,126.53">📍 제주 (Jeju Island)</option>
+            <option value="35.22,128.68">📍 창원 (Changwon)</option>
+          </select>
+          <button onclick="fetchWeather()" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-xl text-sm font-bold transition flex items-center gap-1 shadow-sm" title="날씨 새로고침">
+            <i class="fa-solid fa-arrows-rotate" id="refresh-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Weather Display Cards -->
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+        <!-- Main Realtime Board -->
+        <div id="weather-board" class="md:col-span-5 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl p-6 flex flex-col justify-between shadow-md relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <span id="weather-location-label" class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold">
+              양산 황산초등학교
+            </span>
+            <span id="weather-time" class="text-xs text-blue-100 font-mono">LIVE</span>
+          </div>
+
+          <div class="my-4 flex items-center justify-center space-x-6">
+            <div id="weather-icon-container" class="text-6xl drop-shadow-md">
+              <i class="fa-solid fa-sun text-yellow-300 animate-spin" style="animation-duration: 18s;"></i>
+            </div>
+            <div>
+              <div class="text-5xl font-black tracking-tight flex items-start">
+                <span id="weather-temp">--</span>
+                <span class="text-2xl font-normal ml-0.5">°C</span>
+              </div>
+              <div id="weather-condition-en" class="text-lg font-bold text-blue-100">Sunny</div>
+              <div id="weather-condition-ko" class="text-xs text-blue-200">맑음</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 pt-3 border-t border-white/20 text-xs text-center font-medium">
+            <div class="bg-white/10 rounded-lg p-2">
+              <span class="text-blue-200">습도 (Humidity)</span>
+              <p id="weather-humidity" class="text-sm font-bold mt-0.5">--%</p>
+            </div>
+            <div class="bg-white/10 rounded-lg p-2">
+              <span class="text-blue-200">바람 (Wind)</span>
+              <p id="weather-wind" class="text-sm font-bold mt-0.5">-- km/h</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grade 5 Weather Dialogue Matching & TTS -->
+        <div class="md:col-span-7 bg-blue-50/60 rounded-2xl p-5 border border-blue-100 flex flex-col justify-between">
+          <div>
+            <h3 class="text-base font-bold text-indigo-900 flex items-center gap-2 mb-3">
+              <i class="fa-solid fa-comments text-blue-600"></i>
+              <span>Teacher E.T.와 말해보는 오늘의 날씨 대화</span>
+            </h3>
+
+            <div class="space-y-3">
+              <!-- Q&A block -->
+              <div class="bg-white p-3.5 rounded-xl border border-blue-200 shadow-sm flex items-start justify-between gap-3">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <span class="bg-indigo-600 text-white text-[11px] font-bold px-1.5 py-0.5 rounded">Q</span>
+                    <span class="font-black text-slate-800 text-sm sm:text-base">"How is the weather today?"</span>
+                  </div>
+                  <p class="text-xs text-slate-500 pl-6">"오늘 날씨가 어때?"</p>
+                </div>
+                <button onclick="speakText('How is the weather today?')" class="text-indigo-600 hover:text-indigo-800 p-2 text-base transition" title="발음 듣기">
+                  <i class="fa-solid fa-volume-high"></i>
+                </button>
+              </div>
+
+              <div class="bg-white p-3.5 rounded-xl border border-blue-200 shadow-sm flex items-start justify-between gap-3">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <span class="bg-emerald-600 text-white text-[11px] font-bold px-1.5 py-0.5 rounded">A</span>
+                    <span id="weather-spoken-phrase" class="font-black text-slate-800 text-sm sm:text-base">"It is sunny and warm."</span>
+                  </div>
+                  <p id="weather-spoken-ko" class="text-xs text-slate-500 pl-6">"날씨가 맑고 따뜻해요."</p>
+                </div>
+                <button id="btn-speak-weather-answer" onclick="speakWeatherAnswer()" class="text-emerald-600 hover:text-emerald-800 p-2 text-base transition" title="발음 듣기">
+                  <i class="fa-solid fa-volume-high"></i>
+                </button>
+              </div>
+
+              <!-- Recommendation -->
+              <div class="bg-amber-100/60 p-3 rounded-xl border border-amber-200 flex items-center gap-3">
+                <span class="text-2xl">🎒</span>
+                <div>
+                  <span class="text-xs font-black text-amber-900 block" id="weather-advice-en">"Don't forget your hat and water!"</span>
+                  <span class="text-[11px] text-amber-800" id="weather-advice-ko">모자와 물을 챙기세요!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-blue-100 flex items-center justify-between text-xs text-slate-500">
+            <span>💡 <strong>Tip:</strong> 스피커 아이콘을 누르면 Teacher E.T.가 직접 발음해 줘요!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRADE 5 VOCABULARY & EXPRESSIONS (4 Key Units) -->
+    <section id="vocab-section" class="bg-white rounded-3xl p-6 sm:p-8 card-shadow border-2 border-emerald-200">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700">5th Grade Core Units</span>
+          <h2 class="text-2xl font-black text-slate-800 mt-1 flex items-center gap-2">
+            <span>📖 5학년 핵심 영단어 & 표현 보물상자</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500">교육부 초등 5학년 교육과정 필수 단원별 단어와 표현을 마스터해요!</p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap gap-1.5 p-1 bg-slate-100 rounded-2xl" id="topic-tabs">
+          <button onclick="switchTopic('routine')" class="topic-btn active px-3 py-1.5 rounded-xl text-xs font-black transition bg-white text-emerald-700 shadow-sm" data-topic="routine">
+            ⏰ 일상 & 시간
+          </button>
+          <button onclick="switchTopic('feelings')" class="topic-btn px-3 py-1.5 rounded-xl text-xs font-black transition text-slate-600 hover:text-slate-900" data-topic="feelings">
+            😊 감정 & 상태
+          </button>
+          <button onclick="switchTopic('seasons')" class="topic-btn px-3 py-1.5 rounded-xl text-xs font-black transition text-slate-600 hover:text-slate-900" data-topic="seasons">
+            🍁 계절 & 날씨
+          </button>
+          <button onclick="switchTopic('food')" class="topic-btn px-3 py-1.5 rounded-xl text-xs font-black transition text-slate-600 hover:text-slate-900" data-topic="food">
+            🍔 음식 & 주문
+          </button>
+        </div>
+      </div>
+
+      <!-- Unit Focus Key Expressions Banner -->
+      <div id="unit-focus-banner" class="mt-6 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl p-4 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
+        <!-- Dynamically injected -->
+      </div>
+
+      <!-- Words Card Grid -->
+      <div id="words-grid" class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Dynamically populated via JavaScript -->
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SPEED QUIZ GAME -->
+    <section id="quiz-section" class="bg-white rounded-3xl p-6 sm:p-8 card-shadow border-2 border-purple-200">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-purple-700">Level 5 Challenge</span>
+          <h2 class="text-2xl font-black text-slate-800 mt-1 flex items-center gap-2">
+            <span>🎮 Teacher E.T.'s 영어 스피드 퀴즈!</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500">배운 5학년 단어와 표현을 맞히고 우주 스타 스티커를 모아보세요!</p>
+        </div>
+        <div class="flex items-center gap-4 bg-purple-50 px-4 py-2 rounded-2xl border border-purple-200">
+          <div class="text-center">
+            <span class="text-[10px] uppercase font-bold text-slate-500 block">점수 (Score)</span>
+            <span id="quiz-score" class="text-lg font-black text-purple-700">0 점</span>
+          </div>
+          <div class="h-6 w-px bg-purple-200"></div>
+          <div class="text-center">
+            <span class="text-[10px] uppercase font-bold text-slate-500 block">남은 문제</span>
+            <span id="quiz-progress" class="text-lg font-black text-indigo-700">1 / 5</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz Arena -->
+      <div class="mt-6 max-w-2xl mx-auto">
+        <!-- Question Box -->
+        <div id="quiz-box" class="bg-gradient-to-b from-purple-50/50 to-indigo-50/50 rounded-2xl p-6 sm:p-8 border-2 border-purple-200 text-center relative">
+          <span id="quiz-badge" class="bg-purple-600 text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+            Quiz Question
+          </span>
+          <div id="quiz-prompt" class="my-6">
+            <div id="quiz-emoji" class="text-6xl mb-3">❓</div>
+            <h3 id="quiz-question-text" class="text-xl sm:text-2xl font-black text-slate-800">
+              문제 로딩 중...
+            </h3>
+            <p id="quiz-hint" class="text-sm font-semibold text-purple-600 mt-1">힌트를 확인하세요!</p>
+          </div>
+
+          <!-- Quiz TTS button -->
+          <button id="btn-quiz-listen" onclick="speakCurrentQuiz()" class="inline-flex items-center gap-2 text-xs font-bold text-indigo-700 bg-white hover:bg-slate-50 px-4 py-2 rounded-xl shadow-sm border border-indigo-200 transition">
+            <i class="fa-solid fa-volume-high"></i> 영어 소리 듣기
+          </button>
+
+          <!-- Answer Options Grid -->
+          <div id="quiz-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+            <!-- Injected dynamically -->
+          </div>
+
+          <!-- Feedback alert message inside quiz (hidden by default) -->
+          <div id="quiz-feedback" class="mt-4 hidden p-3 rounded-xl text-sm font-black transition"></div>
+        </div>
+
+        <!-- Restart / Next button container -->
+        <div class="mt-4 flex justify-center">
+          <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden bg-purple-600 hover:bg-purple-700 text-white font-black px-6 py-2.5 rounded-xl shadow-md transition items-center gap-2">
+            <span>다음 문제로 가기</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button id="quiz-restart-btn" onclick="startQuiz()" class="hidden bg-emerald-600 hover:bg-emerald-700 text-white font-black px-6 py-2.5 rounded-xl shadow-md transition items-center gap-2">
+            <i class="fa-solid fa-rotate-right"></i>
+            <span>다시 도전하기</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODAY'S SPECIAL PHRASE & SELF-CHECK -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Today's Golden Expression -->
+      <div class="bg-gradient-to-br from-amber-400 to-orange-400 text-white rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between">
+            <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">
+              ⭐ Today's Expression
+            </span>
+            <span class="text-2xl">🌟</span>
+          </div>
+          <div class="mt-4">
+            <h4 class="text-2xl sm:text-3xl font-black tracking-tight leading-snug">
+              "What time do you get up?"
+            </h4>
+            <p class="text-amber-100 text-base font-semibold mt-1">"너는 몇 시에 일어나니?"</p>
+          </div>
+          <div class="mt-4 bg-white/10 rounded-2xl p-3.5 backdrop-blur-sm text-sm border border-white/20">
+            <p class="font-bold">👉 대답해 볼까요?</p>
+            <p class="text-amber-100 mt-0.5">"I get up at 7:00." (나는 7시에 일어나.)</p>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/20 flex items-center justify-between">
+          <span class="text-xs text-amber-100 font-medium">황산초 5학년 필수 표현 #07</span>
+          <button onclick="speakText('What time do you get up? I get up at seven o\'clock.')" class="bg-white text-orange-600 hover:bg-amber-50 px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shadow-sm">
+            <i class="fa-solid fa-volume-high"></i> 원어민 발음 듣기
+          </button>
+        </div>
+      </div>
+
+      <!-- Self Study Checklist -->
+      <div class="bg-white rounded-3xl p-6 sm:p-7 card-shadow border-2 border-slate-200 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <h3 class="font-black text-slate-800 text-lg flex items-center gap-2">
+              <i class="fa-solid fa-clipboard-check text-emerald-500"></i>
+              <span>Teacher E.T.의 일일 복습 체크</span>
+            </h3>
+            <span class="text-xs text-slate-400 font-bold" id="checklist-counter">0 / 3 완료</span>
+          </div>
+          <div class="mt-4 space-y-3" id="checklist-items">
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition cursor-pointer border border-slate-200">
+              <input type="checkbox" onchange="updateChecklist()" class="w-5 h-5 rounded text-emerald-600 focus:ring-emerald-500 border-slate-300">
+              <span class="text-sm font-bold text-slate-700">오늘의 날씨 영어로 크게 말해보기</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition cursor-pointer border border-slate-200">
+              <input type="checkbox" onchange="updateChecklist()" class="w-5 h-5 rounded text-emerald-600 focus:ring-emerald-500 border-slate-300">
+              <span class="text-sm font-bold text-slate-700">5학년 영단어 카드 4개 소리 내어 따라 읽기</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition cursor-pointer border border-slate-200">
+              <input type="checkbox" onchange="updateChecklist()" class="w-5 h-5 rounded text-emerald-600 focus:ring-emerald-500 border-slate-300">
+              <span class="text-sm font-bold text-slate-700">스피드 퀴즈에서 80점 이상 획득하기</span>
+            </label>
+          </div>
+        </div>
+        <div id="checklist-message" class="mt-4 text-center text-xs font-bold text-emerald-700 py-1.5 bg-emerald-50 rounded-xl hidden">
+          🎉 와우! 오늘의 미션을 모두 달성했어요! 참 잘했어요!
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-8 mt-12 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs">
+      <div>
+        <p class="font-black text-slate-200 text-sm flex items-center justify-center sm:justify-start gap-2">
+          <span>황산초등학교 5학년 영어 교실</span>
+          <span class="bg-slate-800 text-yellow-400 px-2 py-0.5 rounded text-[10px]">with Teacher E.T. 🛸</span>
+        </p>
+        <p class="mt-1 text-slate-400">경상남도 양산시 물금읍 황산초등학교 5학년 학생들을 위한 학습 웹페이지입니다.</p>
+        <p class="mt-0.5 text-slate-500">날씨 데이터 제공: Open-Meteo Public API (비영리 오픈 날씨 서비스)</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-3 py-2 rounded-xl transition flex items-center gap-1.5">
+          <i class="fa-solid fa-arrow-up"></i> 맨 위로
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    /* ========================================================
+       1. TEXT-TO-SPEECH (TTS) ENGINE FOR ELEMENTARY LEARNERS
+       ======================================================== */
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) {
+        console.warn('Speech synthesis not supported in this browser.');
+        return;
+      }
+      // Cancel ongoing speech
+      window.speechSynthesis.cancel();
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.85; // Slightly slower pace for 5th graders
+      utterance.pitch = 1.05; // Friendly warm tone
+
+      // Try to pick a natural English voice if present
+      const voices = window.speechSynthesis.getVoices();
+      const usVoice = voices.find(v => v.lang.includes('en-US') && !v.name.includes('Zira'));
+      if (usVoice) utterance.voice = usVoice;
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    /* Pre-load voices */
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+    }
+
+    /* ========================================================
+       2. REAL-TIME PUBLIC WEATHER API (Open-Meteo)
+       ======================================================== */
+    let currentWeatherDescriptionEn = "Sunny";
+    let currentWeatherAdviceEn = "Enjoy your day at school!";
+    let currentWeatherAdviceKo = "학교에서 즐거운 하루 보내세요!";
+
+    // Weather code decoder based on WMO standards used by Open-Meteo
+    function decodeWeatherCode(code) {
+      // code: [EN, KO, IconClass, AdviceEN, AdviceKO]
+      switch (code) {
+        case 0:
+          return { en: "Clear and Sunny", ko: "맑고 화창함", icon: "fa-sun text-amber-400", phrase: "It is clear and sunny today.", adviceEn: "Don't forget your hat and water!", adviceKo: "햇볕이 밝으니 모자와 물병을 챙기세요!" };
+        case 1:
+        case 2:
+          return { en: "Partly Cloudy", ko: "구름 조금", icon: "fa-cloud-sun text-amber-300", phrase: "It is partly cloudy and pleasant.", adviceEn: "It is a great day to play soccer!", adviceKo: "운동장에서 축구하기 딱 좋은 날씨예요!" };
+        case 3:
+          return { en: "Overcast / Cloudy", ko: "흐림", icon: "fa-cloud text-slate-400", phrase: "It is cloudy and cool today.", adviceEn: "Take a light jacket just in case.", adviceKo: "날이 흐리니 얇은 겉옷을 챙기면 좋아요." };
+        case 45:
+        case 48:
+          return { en: "Foggy", ko: "안개", icon: "fa-smog text-slate-400", phrase: "It is foggy outside. Watch your step!", adviceEn: "Walk carefully on your way to school.", adviceKo: "등굣길 안개길을 조심조심 걸어요." };
+        case 51:
+        case 53:
+        case 55:
+        case 61:
+        case 63:
+        case 65:
+          return { en: "Rainy", ko: "비 내림", icon: "fa-cloud-showers-heavy text-blue-400", phrase: "It is rainy today. Don't forget your umbrella!", adviceEn: "Take your umbrella with you!", adviceKo: "우산을 잊지 말고 꼭 챙기세요!" };
+        case 71:
+        case 73:
+        case 75:
+          return { en: "Snowy", ko: "눈 내림", icon: "fa-snowflake text-cyan-300", phrase: "It is snowy and cold today!", adviceEn: "Put on your warm coat and gloves!", adviceKo: "따뜻한 외투와 장갑을 착용하세요!" };
+        case 80:
+        case 81:
+        case 82:
+          return { en: "Showers", ko: "소나기", icon: "fa-cloud-rain text-blue-400", phrase: "It is raining now. Stay dry!", adviceEn: "Watch out for puddles!", adviceKo: "빗물 웅덩이를 조심하세요!" };
+        case 95:
+        case 96:
+        case 99:
+          return { en: "Thunderstorm", ko: "천둥번개", icon: "fa-bolt text-yellow-300", phrase: "There is a thunderstorm today.", adviceEn: "Stay safe indoors during recess!", adviceKo: "쉬는 시간에는 안전하게 교실에 머물러요!" };
+        default:
+          return { en: "Mild & Nice", ko: "온화함", icon: "fa-cloud-sun text-yellow-400", phrase: "It is nice and warm today.", adviceEn: "Have a happy English class!", adviceKo: "오늘도 행복한 영어 수업시간 되세요!" };
+      }
+    }
+
+    async function fetchWeather() {
+      const citySelector = document.getElementById('city-selector');
+      const [lat, lon] = citySelector.value.split(',');
+      const selectedCityName = citySelector.options[citySelector.selectedIndex].text.replace('📍 ', '');
+      
+      const refreshIcon = document.getElementById('refresh-icon');
+      if (refreshIcon) refreshIcon.classList.add('fa-spin');
+
+      try {
+        // Open-Meteo API (Open public access, no API key required, highly reliable)
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=auto`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('Weather network error');
+        const data = await res.json();
+
+        const current = data.current;
+        const temp = Math.round(current.temperature_2m);
+        const humidity = current.relative_humidity_2m;
+        const wind = current.wind_speed_10m;
+        const weatherInfo = decodeWeatherCode(current.weather_code);
+
+        // Update UI
+        document.getElementById('weather-temp').innerText = temp;
+        document.getElementById('weather-humidity').innerText = `${humidity}%`;
+        document.getElementById('weather-wind').innerText = `${wind} km/h`;
+        document.getElementById('weather-condition-en').innerText = weatherInfo.en;
+        document.getElementById('weather-condition-ko').innerText = weatherInfo.ko;
+        document.getElementById('weather-location-label').innerText = selectedCityName;
+
+        // Icon
+        document.getElementById('weather-icon-container').innerHTML = `<i class="fa-solid ${weatherInfo.icon}"></i>`;
+
+        // English dialogue card update
+        currentWeatherDescriptionEn = weatherInfo.phrase;
+        document.getElementById('weather-spoken-phrase').innerText = `"${weatherInfo.phrase}"`;
+        document.getElementById('weather-spoken-ko').innerText = `"${weatherInfo.ko} 날씨예요."`;
+        
+        document.getElementById('weather-advice-en').innerText = `"${weatherInfo.adviceEn}"`;
+        document.getElementById('weather-advice-ko').innerText = weatherInfo.adviceKo;
+
+        const now = new Date();
+        document.getElementById('weather-updated-time').innerText = `오늘 ${now.getHours()}시 ${String(now.getMinutes()).padStart(2, '0')}분 기준`;
+      } catch (err) {
+        console.error('Weather load error:', err);
+        document.getElementById('weather-temp').innerText = "20";
+        document.getElementById('weather-condition-en').innerText = "Sunny & Clear";
+        document.getElementById('weather-condition-ko').innerText = "맑음 (기본값)";
+        document.getElementById('weather-spoken-phrase').innerText = '"It is sunny and pleasant today."';
+        document.getElementById('weather-spoken-ko').innerText = '"오늘은 맑고 기분 좋은 날씨예요."';
+      } finally {
+        if (refreshIcon) refreshIcon.classList.remove('fa-spin');
+      }
+    }
+
+    function speakWeatherAnswer() {
+      speakText(currentWeatherDescriptionEn);
+    }
+
+    /* ========================================================
+       3. 5TH GRADE CURRICULUM VOCABULARY & EXPRESSIONS DATA
+       ======================================================== */
+    const vocabData = {
+      routine: {
+        title: "Unit 1 & 2: Daily Routine & Time (일과와 시간)",
+        bannerEn: "Key: 'What time do you get up?' - 'I get up at 7 o'clock.'",
+        bannerKo: "핵심 질문: 몇 시에 무엇을 하는지 묻고 답하는 5학년 대표 표현!",
+        words: [
+          { en: "get up", ko: "일어나다", icon: "⏰", sentence: "I get up early." },
+          { en: "have breakfast", ko: "아침을 먹다", icon: "🥣", sentence: "I have breakfast at eight." },
+          { en: "go to school", ko: "학교에 가다", icon: "🏫", sentence: "I go to Hwangsan Elementary School." },
+          { en: "do homework", ko: "숙제를 하다", icon: "📝", sentence: "I do homework in the afternoon." },
+          { en: "go to bed", ko: "잠자리에 들다", icon: "🛌", sentence: "I go to bed at ten o'clock." },
+          { en: "o'clock", ko: "정각, ~시", icon: "🕒", sentence: "It is nine o'clock." },
+          { en: "watch TV", ko: "TV를 보다", icon: "📺", sentence: "Don't watch TV too late." },
+          { en: "wash hands", ko: "손을 씻다", icon: "🧼", sentence: "Please wash your hands." }
+        ]
+      },
+      feelings: {
+        title: "Unit 3 & 4: Feelings & Health (감정과 건강 상태)",
+        bannerEn: "Key: 'What's wrong?' - 'I have a headache.' / 'Are you happy?'",
+        bannerKo: "핵심 질문: 친구의 아픈 곳이나 기분을 묻고 위로하는 표현!",
+        words: [
+          { en: "happy", ko: "행복한", icon: "😄", sentence: "I am very happy today." },
+          { en: "tired", ko: "피곤한", icon: "🥱", sentence: "Teacher E.T. is tired." },
+          { en: "excited", ko: "신나는", icon: "🥳", sentence: "We are excited for English class!" },
+          { en: "headache", ko: "두통, 머리 아픔", icon: "🤕", sentence: "I have a headache." },
+          { en: "stomachache", ko: "배탈, 복통", icon: "🤢", sentence: "I have a stomachache." },
+          { en: "cold", ko: "감기", icon: "🤧", sentence: "I have a bad cold." },
+          { en: "take medicine", ko: "약을 먹다", icon: "💊", sentence: "Take medicine and rest." },
+          { en: "thirsty", ko: "목마른", icon: "🥤", sentence: "I am thirsty. Water please." }
+        ]
+      },
+      seasons: {
+        title: "Unit 5 & 6: Seasons & Weather (계절과 날씨)",
+        bannerEn: "Key: 'What's your favorite season?' - 'I like spring!'",
+        bannerKo: "핵심 질문: 사계절과 날씨의 특징을 표현해 보는 필수 단원!",
+        words: [
+          { en: "spring", ko: "봄", icon: "🌸", sentence: "Spring is warm and colorful." },
+          { en: "summer", ko: "여름", icon: "🏖️", sentence: "I like summer swimming." },
+          { en: "fall (autumn)", ko: "가을", icon: "🍁", sentence: "Fall has beautiful leaves." },
+          { en: "winter", ko: "겨울", icon: "⛄", sentence: "Winter is cold and snowy." },
+          { en: "sunny", ko: "화창한", icon: "☀️", sentence: "It is sunny outside." },
+          { en: "rainy", ko: "비 오는", icon: "🌧️", sentence: "Take an umbrella on rainy days." },
+          { en: "windy", ko: "바람 부는", icon: "💨", sentence: "It is very windy today." },
+          { en: "snowy", ko: "눈 내리는", icon: "❄️", sentence: "Let's make a snowy snowman." }
+        ]
+      },
+      food: {
+        title: "Unit 7 & 8: Food & Ordering (음식과 주문하기)",
+        bannerEn: "Key: 'What would you like?' - 'I want some pizza, please.'",
+        bannerKo: "핵심 질문: 원하는 음식을 정중히 주문하고 맛을 표현하기!",
+        words: [
+          { en: "delicious", ko: "맛있는", icon: "😋", sentence: "This tteokbokki is delicious!" },
+          { en: "sandwich", ko: "샌드위치", icon: "🥪", sentence: "I'd like a sandwich, please." },
+          { en: "spaghetti", ko: "스파게티", icon: "🍝", sentence: "We love tomato spaghetti." },
+          { en: "vegetables", ko: "채소, 야채", icon: "🥗", sentence: "Eat fresh vegetables." },
+          { en: "sweet", ko: "달콤한", icon: "🍯", sentence: "The strawberry is sweet." },
+          { en: "spicy", ko: "매운", icon: "🌶️", sentence: "Kimchi is a bit spicy." },
+          { en: "order", ko: "주문하다", icon: "📋", sentence: "May I take your order?" },
+          { en: "water", ko: "물", icon: "💧", sentence: "Can I have some cold water?" }
+        ]
+      }
+    };
+
+    let currentTopicKey = 'routine';
+
+    function renderVocab(topicKey) {
+      currentTopicKey = topicKey;
+      const data = vocabData[topicKey];
+      
+      // Update Banner
+      const banner = document.getElementById('unit-focus-banner');
+      banner.innerHTML = `
+        <div>
+          <span class="text-xs bg-white/20 font-black px-2.5 py-1 rounded-full uppercase tracking-wider mb-1 inline-block">현재 단원</span>
+          <h3 class="text-lg sm:text-xl font-black">${data.title}</h3>
+          <p class="text-xs sm:text-sm text-emerald-100 mt-1">${data.bannerKo}</p>
+        </div>
+        <button onclick="speakText('${data.bannerEn.replace(/'/g, "\\'")}')" class="bg-white text-emerald-800 hover:bg-emerald-50 px-4 py-2 rounded-xl text-xs font-black transition shrink-0 flex items-center gap-2 shadow">
+          <i class="fa-solid fa-volume-high"></i> 핵심 문장 듣기
+        </button>
+      `;
+
+      // Update Word Grid
+      const grid = document.getElementById('words-grid');
+      grid.innerHTML = '';
+
+      data.words.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = "bg-slate-50 hover:bg-white rounded-2xl p-4 border border-slate-200 hover:border-emerald-300 hover:shadow-md transition cursor-pointer flex flex-col justify-between group";
+        card.onclick = () => speakText(`${item.en}. ${item.sentence}`);
+
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between text-2xl">
+              <span>${item.icon}</span>
+              <button title="발음 듣기" class="text-slate-400 group-hover:text-emerald-600 transition text-sm p-1">
+                <i class="fa-solid fa-volume-high"></i>
+              </button>
+            </div>
+            <div class="mt-2 font-black text-slate-800 text-base group-hover:text-emerald-700 transition">
+              ${item.en}
+            </div>
+            <div class="text-xs font-bold text-slate-500 mt-0.5">
+              ${item.ko}
+            </div>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-200/60 text-[11px] text-slate-400 italic group-hover:text-slate-600">
+            "${item.sentence}"
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function switchTopic(topicKey) {
+      // update tab styles
+      const tabs = document.querySelectorAll('.topic-btn');
+      tabs.forEach(btn => {
+        if (btn.dataset.topic === topicKey) {
+          btn.className = "topic-btn active px-3 py-1.5 rounded-xl text-xs font-black transition bg-white text-emerald-700 shadow-sm";
+        } else {
+          btn.className = "topic-btn px-3 py-1.5 rounded-xl text-xs font-black transition text-slate-600 hover:text-slate-900";
+        }
+      });
+      renderVocab(topicKey);
+    }
+
+    /* ========================================================
+       4. INTERACTIVE QUIZ ENGINE
+       ======================================================== */
+    const quizDatabase = [
+      {
+        question: "아침에 '일어나다'라는 뜻의 5학년 단어는?",
+        hint: "힌트: 알람 소리가 울리면 침대에서 일어나요!",
+        emoji: "⏰",
+        tts: "What is the phrase for waking up?",
+        options: ["get up", "go to bed", "watch TV", "take medicine"],
+        correct: 0,
+        explain: "'get up'은 '일어나다'라는 뜻이에요! 'go to bed'는 잠자리에 들다예요."
+      },
+      {
+        question: "'오늘 날씨가 어때?'를 영어로 바르게 묻는 것은?",
+        hint: "힌트: How is...",
+        emoji: "🌦️",
+        tts: "How is the weather today?",
+        options: [
+          "What time is it?",
+          "How is the weather today?",
+          "What would you like?",
+          "Where is the restroom?"
+        ],
+        correct: 1,
+        explain: "날씨를 물을 땐 'How is the weather today?'라고 물어요."
+      },
+      {
+        question: "'머리가 아파요(두통이 있어요)'라는 올바른 영어 표현은?",
+        hint: "힌트: 머리(head) + 아픔(ache)",
+        emoji: "🤕",
+        tts: "I have a headache.",
+        options: [
+          "I have a stomachache.",
+          "I have a cold.",
+          "I have a headache.",
+          "I am thirsty."
+        ],
+        correct: 2,
+        explain: "'headache'는 두통이에요! 배가 아플 때는 'stomachache'라고 해요."
+      },
+      {
+        question: "'가을'을 뜻하는 영어 단어는 무엇일까요?",
+        hint: "힌트: 낙엽이 떨어지다(fall)와 같아요!",
+        emoji: "🍁",
+        tts: "Fall or autumn.",
+        options: ["spring", "summer", "fall", "winter"],
+        correct: 2,
+        explain: "가을은 'fall' 또는 'autumn'이라고 불러요. 봄은 spring, 여름은 summer, 겨울은 winter!"
+      },
+      {
+        question: "음식점에서 '샌드위치 주세요'라고 정중히 주문할 때 알맞은 말은?",
+        hint: "힌트: I'd like...",
+        emoji: "🥪",
+        tts: "I'd like a sandwich, please.",
+        options: [
+          "I'd like a sandwich, please.",
+          "I get up at 7 o'clock.",
+          "It is rainy today.",
+          "Put on your warm coat."
+        ],
+        correct: 0,
+        explain: "주문할 때는 'I'd like ~ , please' 표현을 사용해요!"
+      }
+    ];
+
+    let currentQuestionIdx = 0;
+    let score = 0;
+    let answered = false;
+
+    function startQuiz() {
+      currentQuestionIdx = 0;
+      score = 0;
+      answered = false;
+      document.getElementById('quiz-restart-btn').classList.add('hidden');
+      document.getElementById('quiz-next-btn').classList.add('hidden');
+      document.getElementById('quiz-feedback').classList.add('hidden');
+      updateQuizUI();
+    }
+
+    function updateQuizUI() {
+      const q = quizDatabase[currentQuestionIdx];
+      answered = false;
+
+      // Update counters
+      document.getElementById('quiz-score').innerText = `${score} 점`;
+      document.getElementById('quiz-progress').innerText = `${currentQuestionIdx + 1} / ${quizDatabase.length}`;
+      document.getElementById('quiz-badge').innerText = `문제 ${currentQuestionIdx + 1}`;
+      
+      document.getElementById('quiz-emoji').innerText = q.emoji;
+      document.getElementById('quiz-question-text').innerText = q.question;
+      document.getElementById('quiz-hint').innerText = q.hint;
+
+      // Hide feedback and next
+      const fb = document.getElementById('quiz-feedback');
+      fb.className = "mt-4 hidden p-3 rounded-xl text-sm font-black";
+      fb.innerText = "";
+      document.getElementById('quiz-next-btn').classList.add('hidden');
+
+      // Build options
+      const optContainer = document.getElementById('quiz-options');
+      optContainer.innerHTML = '';
+
+      q.options.forEach((optText, index) => {
+        const btn = document.createElement('button');
+        btn.className = "quiz-opt-btn p-3.5 rounded-xl border-2 border-slate-200 bg-white hover:border-purple-400 font-bold text-slate-700 text-sm transition text-left flex items-center justify-between";
+        btn.innerHTML = `
+          <span><span class="inline-block w-6 h-6 rounded-full bg-slate-100 text-slate-600 text-xs text-center leading-6 mr-2 font-black">${index + 1}</span> ${optText}</span>
+          <i class="fa-solid fa-chevron-right text-slate-300 text-xs"></i>
+        `;
+        btn.onclick = () => selectAnswer(index);
+        optContainer.appendChild(btn);
+      });
+    }
+
+    function speakCurrentQuiz() {
+      const q = quizDatabase[currentQuestionIdx];
+      speakText(q.tts || q.question);
+    }
+
+    function selectAnswer(selectedIdx) {
+      if (answered) return;
+      answered = true;
+
+      const q = quizDatabase[currentQuestionIdx];
+      const optButtons = document.querySelectorAll('.quiz-opt-btn');
+      const fb = document.getElementById('quiz-feedback');
+      fb.classList.remove('hidden');
+
+      if (selectedIdx === q.correct) {
+        // Correct
+        score += 20;
+        document.getElementById('quiz-score').innerText = `${score} 점`;
+        optButtons[selectedIdx].classList.remove('border-slate-200', 'bg-white');
+        optButtons[selectedIdx].classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-800');
+        
+        fb.classList.add('bg-emerald-100', 'text-emerald-900', 'border', 'border-emerald-300');
+        fb.innerHTML = `🎉 <strong>Great job! 정답입니다!</strong><br><span class="text-xs font-semibold">${q.explain}</span>`;
+        speakText("Awesome! That's correct!");
+      } else {
+        // Wrong
+        optButtons[selectedIdx].classList.remove('border-slate-200', 'bg-white');
+        optButtons[selectedIdx].classList.add('border-rose-400', 'bg-rose-50', 'text-rose-800');
+        
+        optButtons[q.correct].classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-800');
+        
+        fb.classList.add('bg-rose-100', 'text-rose-900', 'border', 'border-rose-300');
+        fb.innerHTML = `😅 <strong>아쉬워요! 정답은 ${q.correct + 1}번입니다.</strong><br><span class="text-xs font-semibold">${q.explain}</span>`;
+        speakText("Good try! Keep going!");
+      }
+
+      // Show next or restart
+      if (currentQuestionIdx < quizDatabase.length - 1) {
+        document.getElementById('quiz-next-btn').classList.remove('hidden');
+      } else {
+        // End of quiz
+        setTimeout(() => {
+          showQuizSummary();
+        }, 1200);
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIdx < quizDatabase.length - 1) {
+        currentQuestionIdx++;
+        updateQuizUI();
+      }
+    }
+
+    function showQuizSummary() {
+      const box = document.getElementById('quiz-box');
+      let medal = "🥇";
+      let praise = "우주 최고 영어 박사 황산초 5학년!";
+      if (score < 60) {
+        medal = "🚀";
+        praise = "조금만 더 연습하면 100점 맞을 수 있어요! 화이팅!";
+      } else if (score < 100) {
+        medal = "🥈";
+        praise = "정말 잘했어요! 최고예요!";
+      }
+
+      box.innerHTML = `
+        <div class="py-6">
+          <div class="text-7xl mb-2">${medal}</div>
+          <h3 class="text-2xl font-black text-slate-800">퀴즈 완료! 최종 점수: ${score}점 / 100점</h3>
+          <p class="text-purple-700 font-bold mt-2">${praise}</p>
+          <p class="text-xs text-slate-500 mt-2">Teacher E.T.가 멋진 우주 스타 스티커를 선물합니다 ⭐</p>
+        </div>
+      `;
+      document.getElementById('quiz-next-btn').classList.add('hidden');
+      document.getElementById('quiz-restart-btn').classList.remove('hidden');
+      speakText(`Quiz finished! You got ${score} points! Great work, Grade 5!`);
+    }
+
+    /* ========================================================
+       5. CHECKLIST SYSTEM
+       ======================================================== */
+    function updateChecklist() {
+      const checkboxes = document.querySelectorAll('#checklist-items input[type="checkbox"]');
+      let checkedCount = 0;
+      checkboxes.forEach(cb => {
+        if (cb.checked) checkedCount++;
+      });
+      document.getElementById('checklist-counter').innerText = `${checkedCount} / ${checkboxes.length} 완료`;
+
+      const msg = document.getElementById('checklist-message');
+      if (checkedCount === checkboxes.length) {
+        msg.classList.remove('hidden');
+        speakText("Wonderful! You completed all daily missions today!");
+      } else {
+        msg.classList.add('hidden');
+      }
+    }
+
+    /* ========================================================
+       INITIALIZATION ON LOAD
+       ======================================================== */
+    window.addEventListener('DOMContentLoaded', () => {
+      fetchWeather();
+      renderVocab('routine');
+      startQuiz();
+    });
+  </script>
+</body>
+</html>
